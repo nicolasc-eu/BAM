@@ -1,0 +1,6 @@
+<h1>Login</h1>
+<form  (ngSubmit)="onSubmit()">
+    <label for="name">Secret</label>
+    <input type="text" required [(ngModel)]="secret" name="secret">
+    <button type="submit">Login</button>
+</form>

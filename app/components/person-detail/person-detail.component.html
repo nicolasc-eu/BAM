@@ -1,0 +1,16 @@
+<h1>My profile</h1>
+<span>{{ person }}</span>
+
+<div *ngIf="person">
+    <ul>
+        <li>Name: {{ person.name }}</li>
+        <li>Secret: {{person.secret }}</li>
+        <li>Accounts:
+            <ul>
+                <li *ngFor="let account of person.accounts" (click)="onSelect(account)">
+                <span>{{ account.name }}</span>
+            </li>
+        </ul>
+    </li>
+</ul>
+</div>

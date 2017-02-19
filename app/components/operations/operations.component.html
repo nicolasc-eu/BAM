@@ -1,0 +1,22 @@
+<table>
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Comment</td>
+            <td>Amount</td>
+            <td>Date</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let operation of operations" (click)="onSelect(operation)">
+            <td>{{ operation.name }}</td>
+            <td>{{ operation.comment }}</td>
+            <td>{{ operation.amount }}</td>
+            <td>{{ operation.date | date:"dd/MM/yyyy" }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div *ngIf="selectedOperation">
+    <operation-detail [operation]="selectedOperation"></operation-detail>
+</div>

@@ -1,0 +1,30 @@
+@import "libs/mdl/material.css";
+@import "glyphicons.scss";
+@import "variables.scss";
+
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background: none;
+    -webkit-user-select: none;
+    cursor: default;
+    img {
+        pointer-events: none;
+    }
+}
+
+.green-text {
+    color: green;
+}
+
+.red-text {
+    color: red;
+}
+
+#operations-list {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 40px;
+}

@@ -1,0 +1,18 @@
+<h1>Edition</h1>
+<form (ngSubmit)="onSubmit()">
+    <input type="text" required [(ngModel)]="operation.name" name="name" id="name">
+    <label for="name">Name</label>
+
+    <input type="text" [(ngModel)]="operation.comment" name="comment" id="comment">
+    <label for="comment">Comment</label>
+
+    <input type="text" required [(ngModel)]="operation.amount" name="amount" id="amount">
+    <label for="amount">Amount</label>
+
+    <input type="text" required [(ngModel)]="operation.date" name="date" id="date">
+    <label for="date">Date</label>
+
+    <input type="checkbox" class="form-control" [(ngModel)]="operation.checked" name="checked">
+
+    <button type="submit">Save</button>
+</form>
