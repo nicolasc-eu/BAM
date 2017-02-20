@@ -3,22 +3,17 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
 var path = require('path');
-var _root = path.resolve(__dirname, '..');
 
-function root(args) {
-    args = Array.prototype.slice.call(arguments, 0);
-    return path.join.apply(path, [_root].concat(args));
-}
 
 module.exports = [
     {
         entry: {
-            'polyfills': './app/polyfills.browser',
-            'vendor': './app/vendor',
+            'polyfills': './app/misc/polyfills.browser',
+            'vendor': './app/misc/vendor',
             'main': './app/main'
         },
         output: {
-            path: 'dist',
+            path: __dirname + '/dist',
             publicPath: '/',
             filename: '[name].[hash].js',
             chunkFilename: '[id].[hash].chunk.js'
@@ -66,7 +61,6 @@ module.exports = [
             new webpack.optimize.CommonsChunkPlugin({
                 name: ['main', 'polyfills']
             }),
-            // new webpack.optimize.OccurenceOrderPlugin(true),
             new HtmlWebpackPlugin({
                 title: 'PACK',
                 template: './app/index.ejs'
@@ -74,9 +68,3 @@ module.exports = [
         ]
     }
 ];
-
-// Helper functions
-function root(args) {
-    args = Array.prototype.slice.call(arguments, 0);
-    return path.join.apply(path, [__dirname].concat(args));
-}

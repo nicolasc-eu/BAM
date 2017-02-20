@@ -1,19 +1,18 @@
-import { Component } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
+import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
-import { PersonService } from "../../shared/services/person.service";
-import { Person } from "../../models/person.model";
-import { Account } from "../../models/account.model";
+import { PersonService } from '../../shared/services/person.service';
+import { Person } from '../../models/person.model';
+import { Account } from '../../models/account.model';
 
 
 @Component({
-    selector: "person-detail",
-    templateUrl: "./person-detail.component.html"
+    selector: 'person-detail',
+    templateUrl: './person-detail.component.html'
 })
 
 export class PersonDetailComponent {
     public person: Person = null;
-    private _selectedPersonId: number;
 
     constructor(
         private _personService: PersonService,
@@ -23,7 +22,7 @@ export class PersonDetailComponent {
 
     ngOnInit() {
         this._route.params
-            .map(params => +params["id"])
+            .map(params => +params['id'])
             .subscribe((id) => {
                 this._personService.getCurrentPerson()
                     .then(function(person) {
@@ -33,12 +32,12 @@ export class PersonDetailComponent {
                     }.bind(this))
                     .catch(function(err) {
                         console.error(err);
-                        this._router.navigate(["/login"]);
+                        this._router.navigate(['/login']);
                     });
             });
     }
 
     onSelect(account: Account) {
-        this._router.navigate(["/operations", account.id]);
+        this._router.navigate(['/operations', account.id]);
     }
 }

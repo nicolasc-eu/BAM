@@ -7,7 +7,7 @@
     "prewatch": "rimraf dist",
     "watch": "webpack --watch",
     "build": "webpack",
-    "server": "webpack-dev-server --content-base ./dist"
+    "server": "webpack-dev-server"
   },
   "license": "MIT",
   "dependencies": {

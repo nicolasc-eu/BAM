@@ -1,4 +1,4 @@
-import { Account } from "./account.model";
+import { Account } from './account.model';
 
 export class Person {
     id: number;

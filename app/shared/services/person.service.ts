@@ -1,8 +1,8 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
-import { PERSONS } from "../../shared/mock/persons.mock";
-import { Person } from "../../models/person.model";
-import { AccountService } from "./account.service";
+import { PERSONS } from '../../shared/mock/persons.mock';
+import { Person } from '../../models/person.model';
+import { AccountService } from './account.service';
 
 @Injectable()
 
@@ -23,7 +23,7 @@ export class PersonService {
                 this._populate(this.currentPerson);
                 res(this.currentPerson);
             } else {
-                rej("UserNotFound");
+                rej('UserNotFound');
             }
         }.bind(this));
     }
@@ -33,7 +33,7 @@ export class PersonService {
             if (this.currentPerson) {
                 res(this.currentPerson);
             } else {
-                rej("NotLoggedIn");
+                rej('NotLoggedIn');
             }
         }.bind(this));
     }

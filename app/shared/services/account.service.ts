@@ -1,7 +1,7 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
-import { ACCOUNTS } from "../../shared/mock/accounts.mock";
-import { Account } from "../../models/account.model";
+import { ACCOUNTS } from '../../shared/mock/accounts.mock';
+import { Account } from '../../models/account.model';
 
 
 @Injectable()

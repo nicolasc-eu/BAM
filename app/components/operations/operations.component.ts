@@ -1,19 +1,17 @@
-import { Component } from "@angular/core";
-import { ActivatedRoute, Params } from "@angular/router";
+import { Component } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
-import { ToolbarComponent } from "../toolbar/toolbar.component";
-import { OperationDetailComponent } from "../operation-detail/operation-detail.component";
-import { Operation } from "../../models/operation.model";
-import { Account } from "../../models/account.model";
-import { OperationService } from "../../shared/services/operation.service";
-import { AccountService } from "../../shared/services/account.service";
-import { EventService } from "../../shared/services/event.service";
+import { Operation } from '../../models/operation.model';
+import { Account } from '../../models/account.model';
+import { OperationService } from '../../shared/services/operation.service';
+import { AccountService } from '../../shared/services/account.service';
+import { EventService } from '../../shared/services/event.service';
 
 
 @Component({
-    selector: "operations",
-    templateUrl: "./operations.component.html",
-    styleUrls: ["./operations.component.scss"],
+    selector: 'operations',
+    templateUrl: './operations.component.html',
+    styleUrls: ['./operations.component.scss'],
     providers: [OperationService]
 })
 
@@ -32,9 +30,9 @@ export class OperationsComponent {
 
     ngOnInit() {
         this._route.params
-            .map(params => +params["id"])
+            .map(params => +params['id'])
             .subscribe((id) => {
-                this._eventService.createEmitter("newOperation")
+                this._eventService.createEmitter('newOperation')
                     .subscribe(i => this.newOperation(i));
 
                 this._accountService.getOne(id)

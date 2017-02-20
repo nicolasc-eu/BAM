@@ -1,8 +1,8 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
-import { OPERATIONS } from "../../shared/mock/operations.mock";
-import { Operation } from "../../models/operation.model";
-import { Account } from "../../models/account.model";
+import { OPERATIONS } from '../../shared/mock/operations.mock';
+import { Operation } from '../../models/operation.model';
+import { Account } from '../../models/account.model';
 
 @Injectable()
 

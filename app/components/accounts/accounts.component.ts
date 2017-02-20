@@ -1,13 +1,13 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
-import { Account } from "../../models/account.model";
-import { AccountService } from "../../shared/services/account.service";
+import { Account } from '../../models/account.model';
+import { AccountService } from '../../shared/services/account.service';
 
 
 @Component({
-    selector: "accounts",
-    templateUrl: "./accounts.component.html",
-    styleUrls: ["./accounts.component.scss"],
+    selector: 'accounts',
+    templateUrl: './accounts.component.html',
+    styleUrls: ['./accounts.component.scss'],
     providers: [AccountService]
 })
 

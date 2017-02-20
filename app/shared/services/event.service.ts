@@ -1,4 +1,4 @@
-import { Output, EventEmitter, Injectable }  from "@angular/core";
+import { EventEmitter, Injectable } from '@angular/core';
 
 
 class Emitter {
@@ -16,6 +16,8 @@ export class EventService {
     }
 
     emit(key: string, payload: any = null) {
-        this._emitters[key] && this._emitters[key].emit(payload);
+        if (this._emitters[key]) {
+            this._emitters[key].emit(payload);
+        }
     }
 }
